@@ -7,13 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A622D9941DC0616F0091C23B /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A622D9931DC0616F0091C23B /* StatusViewController.swift */; };
+		A622D9971DC55A900091C23B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A622D9961DC55A900091C23B /* MapKit.framework */; };
+		A622D9A71DC7E9600091C23B /* Help-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A622D9A61DC7E9600091C23B /* Help-50.png */; };
 		A65DB2141DB88D020070B0DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65DB2131DB88D020070B0DC /* AppDelegate.swift */; };
-		A65DB2161DB88D020070B0DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65DB2151DB88D020070B0DC /* ViewController.swift */; };
+		A65DB2161DB88D020070B0DC /* CredentialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65DB2151DB88D020070B0DC /* CredentialViewController.swift */; };
 		A65DB2191DB88D020070B0DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A65DB2171DB88D020070B0DC /* Main.storyboard */; };
 		A65DB21B1DB88D020070B0DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A65DB21A1DB88D020070B0DC /* Assets.xcassets */; };
 		A65DB21E1DB88D020070B0DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A65DB21C1DB88D020070B0DC /* LaunchScreen.storyboard */; };
-		A65DB2291DB88D020070B0DC /* GooseByeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65DB2281DB88D020070B0DC /* GooseByeTests.swift */; };
-		A65DB2341DB88D020070B0DC /* GooseByeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65DB2331DB88D020070B0DC /* GooseByeUITests.swift */; };
+		A67F54CC1DCA60ED00A6F953 /* notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = A67F54CB1DCA60ED00A6F953 /* notes.txt */; };
+		A69949F71DBC4946001C78B0 /* CircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69949F61DBC4946001C78B0 /* CircularProgress.swift */; };
+		A69949F91DBD86B0001C78B0 /* SegueNext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69949F81DBD86B0001C78B0 /* SegueNext.swift */; };
+		A69949FB1DBD8E29001C78B0 /* SeguePrevious.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69949FA1DBD8E29001C78B0 /* SeguePrevious.swift */; };
+		A69949FF1DBEAE59001C78B0 /* MissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69949FE1DBEAE59001C78B0 /* MissionViewController.swift */; };
+		A69F58421DD13F9D0037012D /* Goose.png in Resources */ = {isa = PBXBuildFile; fileRef = A69F58411DD13F9D0037012D /* Goose.png */; };
+		A69F58441DD16D500037012D /* About-50.png in Resources */ = {isa = PBXBuildFile; fileRef = A69F58431DD16D500037012D /* About-50.png */; };
+		A69F58461DD16E340037012D /* About-30.png in Resources */ = {isa = PBXBuildFile; fileRef = A69F58451DD16E340037012D /* About-30.png */; };
+		A69F584C1DD399ED0037012D /* Empty Battery Filled-100.png in Resources */ = {isa = PBXBuildFile; fileRef = A69F584B1DD399ED0037012D /* Empty Battery Filled-100.png */; };
+		A69F584E1DD39C620037012D /* Lightning Bolt Filled-100.png in Resources */ = {isa = PBXBuildFile; fileRef = A69F584D1DD39C620037012D /* Lightning Bolt Filled-100.png */; };
+		A69F58541DD53E810037012D /* GooseBye_splash2.png in Resources */ = {isa = PBXBuildFile; fileRef = A69F58531DD53E810037012D /* GooseBye_splash2.png */; };
+		A69F58561DD6512F0037012D /* home-7.png in Resources */ = {isa = PBXBuildFile; fileRef = A69F58551DD6512F0037012D /* home-7.png */; };
+		A69F58581DD651460037012D /* business-target-7.png in Resources */ = {isa = PBXBuildFile; fileRef = A69F58571DD651460037012D /* business-target-7.png */; };
+		A6D8FB021DD13D310042DCBB /* Splashscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = A6D8FB011DD13D310042DCBB /* Splashscreen.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,19 +49,33 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A65DB2101DB88D020070B0DC /* GooseBye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GooseBye.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A622D9931DC0616F0091C23B /* StatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
+		A622D9961DC55A900091C23B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A622D9A61DC7E9600091C23B /* Help-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Help-50.png"; sourceTree = "<group>"; };
 		A65DB2131DB88D020070B0DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A65DB2151DB88D020070B0DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A65DB2151DB88D020070B0DC /* CredentialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialViewController.swift; sourceTree = "<group>"; };
 		A65DB2181DB88D020070B0DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A65DB21A1DB88D020070B0DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A65DB21D1DB88D020070B0DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A65DB21F1DB88D020070B0DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A65DB2241DB88D020070B0DC /* GooseByeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GooseByeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A65DB2281DB88D020070B0DC /* GooseByeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooseByeTests.swift; sourceTree = "<group>"; };
-		A65DB22A1DB88D020070B0DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A65DB22F1DB88D020070B0DC /* GooseByeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GooseByeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A65DB2331DB88D020070B0DC /* GooseByeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooseByeUITests.swift; sourceTree = "<group>"; };
-		A65DB2351DB88D020070B0DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A67F54CB1DCA60ED00A6F953 /* notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notes.txt; sourceTree = "<group>"; };
+		A69949F41DBC47A0001C78B0 /* DJISDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DJISDK.framework; path = ../../DJISDK.framework; sourceTree = "<group>"; };
+		A69949F61DBC4946001C78B0 /* CircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgress.swift; sourceTree = "<group>"; };
+		A69949F81DBD86B0001C78B0 /* SegueNext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueNext.swift; sourceTree = "<group>"; };
+		A69949FA1DBD8E29001C78B0 /* SeguePrevious.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeguePrevious.swift; sourceTree = "<group>"; };
+		A69949FE1DBEAE59001C78B0 /* MissionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionViewController.swift; sourceTree = "<group>"; };
+		A69F58411DD13F9D0037012D /* Goose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Goose.png; path = "../../../../Library/Mobile Documents/6LVTQB9699~com~seriflabs~affinity/Documents/Goose.png"; sourceTree = "<group>"; };
+		A69F58431DD16D500037012D /* About-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "About-50.png"; sourceTree = "<group>"; };
+		A69F58451DD16E340037012D /* About-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "About-30.png"; sourceTree = "<group>"; };
+		A69F584B1DD399ED0037012D /* Empty Battery Filled-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Empty Battery Filled-100.png"; sourceTree = "<group>"; };
+		A69F584D1DD39C620037012D /* Lightning Bolt Filled-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Lightning Bolt Filled-100.png"; sourceTree = "<group>"; };
+		A69F58511DD53E1C0037012D /* GooseByeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GooseByeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A69F58521DD53E1C0037012D /* GooseByeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GooseByeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A69F58531DD53E810037012D /* GooseBye_splash2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GooseBye_splash2.png; path = "../../../../Library/Mobile Documents/6LVTQB9699~com~seriflabs~affinity/Documents/GooseBye_splash2.png"; sourceTree = "<group>"; };
+		A69F58551DD6512F0037012D /* home-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-7.png"; sourceTree = "<group>"; };
+		A69F58571DD651460037012D /* business-target-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "business-target-7.png"; sourceTree = "<group>"; };
+		A6D8FAF81DCBF6500042DCBB /* GooseBye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GooseBye.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6D8FB011DD13D310042DCBB /* Splashscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Splashscreen.png; path = "../../../../Library/Mobile Documents/6LVTQB9699~com~seriflabs~affinity/Documents/Splashscreen.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A622D9971DC55A900091C23B /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,32 +104,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A622D9951DC0645A0091C23B /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				A69949F61DBC4946001C78B0 /* CircularProgress.swift */,
+				A69949F81DBD86B0001C78B0 /* SegueNext.swift */,
+				A69949FA1DBD8E29001C78B0 /* SeguePrevious.swift */,
+			);
+			name = Design;
+			sourceTree = "<group>";
+		};
 		A65DB2071DB88D020070B0DC = {
 			isa = PBXGroup;
 			children = (
 				A65DB2121DB88D020070B0DC /* GooseBye */,
-				A65DB2271DB88D020070B0DC /* GooseByeTests */,
-				A65DB2321DB88D020070B0DC /* GooseByeUITests */,
-				A65DB2111DB88D020070B0DC /* Products */,
+				A69949F31DBC47A0001C78B0 /* Frameworks */,
+				A6D8FAF81DCBF6500042DCBB /* GooseBye.app */,
+				A69F58511DD53E1C0037012D /* GooseByeTests.xctest */,
+				A69F58521DD53E1C0037012D /* GooseByeUITests.xctest */,
 			);
-			sourceTree = "<group>";
-		};
-		A65DB2111DB88D020070B0DC /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A65DB2101DB88D020070B0DC /* GooseBye.app */,
-				A65DB2241DB88D020070B0DC /* GooseByeTests.xctest */,
-				A65DB22F1DB88D020070B0DC /* GooseByeUITests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		A65DB2121DB88D020070B0DC /* GooseBye */ = {
 			isa = PBXGroup;
 			children = (
-				A65DB2131DB88D020070B0DC /* AppDelegate.swift */,
-				A65DB2151DB88D020070B0DC /* ViewController.swift */,
+				A69F58481DD16E7B0037012D /* Images */,
+				A67F54CB1DCA60ED00A6F953 /* notes.txt */,
 				A65DB2171DB88D020070B0DC /* Main.storyboard */,
+				A65DB2131DB88D020070B0DC /* AppDelegate.swift */,
+				A65DB2151DB88D020070B0DC /* CredentialViewController.swift */,
+				A622D9931DC0616F0091C23B /* StatusViewController.swift */,
+				A69949FE1DBEAE59001C78B0 /* MissionViewController.swift */,
+				A622D9951DC0645A0091C23B /* Design */,
 				A65DB21A1DB88D020070B0DC /* Assets.xcassets */,
 				A65DB21C1DB88D020070B0DC /* LaunchScreen.storyboard */,
 				A65DB21F1DB88D020070B0DC /* Info.plist */,
@@ -107,22 +143,30 @@
 			path = GooseBye;
 			sourceTree = "<group>";
 		};
-		A65DB2271DB88D020070B0DC /* GooseByeTests */ = {
+		A69949F31DBC47A0001C78B0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A65DB2281DB88D020070B0DC /* GooseByeTests.swift */,
-				A65DB22A1DB88D020070B0DC /* Info.plist */,
+				A622D9961DC55A900091C23B /* MapKit.framework */,
+				A69949F41DBC47A0001C78B0 /* DJISDK.framework */,
 			);
-			path = GooseByeTests;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A65DB2321DB88D020070B0DC /* GooseByeUITests */ = {
+		A69F58481DD16E7B0037012D /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				A65DB2331DB88D020070B0DC /* GooseByeUITests.swift */,
-				A65DB2351DB88D020070B0DC /* Info.plist */,
+				A69F58531DD53E810037012D /* GooseBye_splash2.png */,
+				A69F584D1DD39C620037012D /* Lightning Bolt Filled-100.png */,
+				A69F584B1DD399ED0037012D /* Empty Battery Filled-100.png */,
+				A69F58551DD6512F0037012D /* home-7.png */,
+				A69F58571DD651460037012D /* business-target-7.png */,
+				A69F58451DD16E340037012D /* About-30.png */,
+				A6D8FB011DD13D310042DCBB /* Splashscreen.png */,
+				A69F58411DD13F9D0037012D /* Goose.png */,
+				A69F58431DD16D500037012D /* About-50.png */,
+				A622D9A61DC7E9600091C23B /* Help-50.png */,
 			);
-			path = GooseByeUITests;
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,7 +186,7 @@
 			);
 			name = GooseBye;
 			productName = GooseBye;
-			productReference = A65DB2101DB88D020070B0DC /* GooseBye.app */;
+			productReference = A6D8FAF81DCBF6500042DCBB /* GooseBye.app */;
 			productType = "com.apple.product-type.application";
 		};
 		A65DB2231DB88D020070B0DC /* GooseByeTests */ = {
@@ -160,7 +204,7 @@
 			);
 			name = GooseByeTests;
 			productName = GooseByeTests;
-			productReference = A65DB2241DB88D020070B0DC /* GooseByeTests.xctest */;
+			productReference = A69F58511DD53E1C0037012D /* GooseByeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		A65DB22E1DB88D020070B0DC /* GooseByeUITests */ = {
@@ -178,7 +222,7 @@
 			);
 			name = GooseByeUITests;
 			productName = GooseByeUITests;
-			productReference = A65DB22F1DB88D020070B0DC /* GooseByeUITests.xctest */;
+			productReference = A69F58521DD53E1C0037012D /* GooseByeUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -188,12 +232,18 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Kishan Patel";
 				TargetAttributes = {
 					A65DB20F1DB88D020070B0DC = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = E8E33P9R34;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					A65DB2231DB88D020070B0DC = {
 						CreatedOnToolsVersion = 8.0;
@@ -216,7 +266,7 @@
 				Base,
 			);
 			mainGroup = A65DB2071DB88D020070B0DC;
-			productRefGroup = A65DB2111DB88D020070B0DC /* Products */;
+			productRefGroup = A65DB2071DB88D020070B0DC;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -233,8 +283,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				A65DB21E1DB88D020070B0DC /* LaunchScreen.storyboard in Resources */,
+				A69F58581DD651460037012D /* business-target-7.png in Resources */,
+				A69F58421DD13F9D0037012D /* Goose.png in Resources */,
+				A67F54CC1DCA60ED00A6F953 /* notes.txt in Resources */,
+				A69F58561DD6512F0037012D /* home-7.png in Resources */,
+				A69F584C1DD399ED0037012D /* Empty Battery Filled-100.png in Resources */,
+				A69F58541DD53E810037012D /* GooseBye_splash2.png in Resources */,
+				A69F58461DD16E340037012D /* About-30.png in Resources */,
 				A65DB21B1DB88D020070B0DC /* Assets.xcassets in Resources */,
+				A69F584E1DD39C620037012D /* Lightning Bolt Filled-100.png in Resources */,
 				A65DB2191DB88D020070B0DC /* Main.storyboard in Resources */,
+				A6D8FB021DD13D310042DCBB /* Splashscreen.png in Resources */,
+				A69F58441DD16D500037012D /* About-50.png in Resources */,
+				A622D9A71DC7E9600091C23B /* Help-50.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +320,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A65DB2161DB88D020070B0DC /* ViewController.swift in Sources */,
+				A622D9941DC0616F0091C23B /* StatusViewController.swift in Sources */,
+				A65DB2161DB88D020070B0DC /* CredentialViewController.swift in Sources */,
 				A65DB2141DB88D020070B0DC /* AppDelegate.swift in Sources */,
+				A69949FF1DBEAE59001C78B0 /* MissionViewController.swift in Sources */,
+				A69949F91DBD86B0001C78B0 /* SegueNext.swift in Sources */,
+				A69949FB1DBD8E29001C78B0 /* SeguePrevious.swift in Sources */,
+				A69949F71DBC4946001C78B0 /* CircularProgress.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +334,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A65DB2291DB88D020070B0DC /* GooseByeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +341,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A65DB2341DB88D020070B0DC /* GooseByeUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +397,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -383,6 +448,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -412,6 +478,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = E8E33P9R34;
 				INFOPLIST_FILE = GooseBye/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SeniorDesignBU.GooseBye;
@@ -424,6 +491,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = E8E33P9R34;
 				INFOPLIST_FILE = GooseBye/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SeniorDesignBU.GooseBye;
@@ -505,6 +573,7 @@
 				A65DB23A1DB88D020070B0DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A65DB23B1DB88D020070B0DC /* Build configuration list for PBXNativeTarget "GooseByeTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +582,7 @@
 				A65DB23D1DB88D020070B0DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A65DB23E1DB88D020070B0DC /* Build configuration list for PBXNativeTarget "GooseByeUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +591,7 @@
 				A65DB2401DB88D020070B0DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
