@@ -8,21 +8,42 @@
 
 import UIKit
 
-class Mission {
+class Mission: NSObject, NSCoding {
     
-    var name: String
+    var name: String?
+    var sensitivity: String?
     
-    var sensitivity: Int
+    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("missions")
     
-    init?(name: String, sensitivity: Int) {
+    struct PropertyKey {
+        static let nameKey = "name"
+        static let sensitivityKey = "sensitivity"
+    }
+    
+    init?(name: String?, sensitivity: String?) {
         self.name = name
         self.sensitivity = sensitivity
         
-        if name.isEmpty {
-            return nil
-        }
+        super.init()
+        
+//        if (name.isEmpty) || (sensitivity.isEmpty) {
+//            return nil
+//        }
     }
     
+    // MARK: NSCoding
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(name, forKey: PropertyKey.nameKey)
+        aCoder.encode(sensitivity, forKey: PropertyKey.sensitivityKey)
+    }
+    
+    required convenience init?(coder aDecoder: NSCoder) {
+        let name = aDecoder.decodeObject(forKey: PropertyKey.nameKey) as? String
+        let sensitivity = aDecoder.decodeObject(forKey: PropertyKey.sensitivityKey) as? String
+        self.init(name: name, sensitivity: sensitivity)
+
+    }
 }
 
 

@@ -21,6 +21,8 @@
 		A69949F91DBD86B0001C78B0 /* SegueNext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69949F81DBD86B0001C78B0 /* SegueNext.swift */; };
 		A69949FB1DBD8E29001C78B0 /* SeguePrevious.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69949FA1DBD8E29001C78B0 /* SeguePrevious.swift */; };
 		A69949FF1DBEAE59001C78B0 /* MissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69949FE1DBEAE59001C78B0 /* MissionViewController.swift */; };
+		A6DB89CC1DD78A8200C041AF /* MissionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DB89CB1DD78A8200C041AF /* MissionTableViewController.swift */; };
+		A6DB89CE1DD794F600C041AF /* NewMissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DB89CD1DD794F600C041AF /* NewMissionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		A69949FA1DBD8E29001C78B0 /* SeguePrevious.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeguePrevious.swift; sourceTree = "<group>"; };
 		A69949FE1DBEAE59001C78B0 /* MissionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionViewController.swift; sourceTree = "<group>"; };
 		A6D8FAF81DCBF6500042DCBB /* GooseBye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GooseBye.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6DB89CB1DD78A8200C041AF /* MissionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionTableViewController.swift; sourceTree = "<group>"; };
+		A6DB89CD1DD794F600C041AF /* NewMissionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMissionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +118,9 @@
 				A65DB2171DB88D020070B0DC /* Main.storyboard */,
 				A65DB2131DB88D020070B0DC /* AppDelegate.swift */,
 				A689DC921DD6A86400E8BEED /* Mission.swift */,
+				A6DB89CB1DD78A8200C041AF /* MissionTableViewController.swift */,
 				A689DC941DD6AAA700E8BEED /* MissionTableViewCell.swift */,
+				A6DB89CD1DD794F600C041AF /* NewMissionViewController.swift */,
 				A65DB2151DB88D020070B0DC /* CredentialViewController.swift */,
 				A622D9931DC0616F0091C23B /* StatusViewController.swift */,
 				A69949FE1DBEAE59001C78B0 /* MissionViewController.swift */,
@@ -278,12 +284,14 @@
 			files = (
 				A622D9941DC0616F0091C23B /* StatusViewController.swift in Sources */,
 				A65DB2161DB88D020070B0DC /* CredentialViewController.swift in Sources */,
+				A6DB89CE1DD794F600C041AF /* NewMissionViewController.swift in Sources */,
 				A65DB2141DB88D020070B0DC /* AppDelegate.swift in Sources */,
 				A69949FF1DBEAE59001C78B0 /* MissionViewController.swift in Sources */,
 				A69949F91DBD86B0001C78B0 /* SegueNext.swift in Sources */,
 				A689DC931DD6A86400E8BEED /* Mission.swift in Sources */,
 				A69949FB1DBD8E29001C78B0 /* SeguePrevious.swift in Sources */,
 				A689DC951DD6AAA700E8BEED /* MissionTableViewCell.swift in Sources */,
+				A6DB89CC1DD78A8200C041AF /* MissionTableViewController.swift in Sources */,
 				A69949F71DBC4946001C78B0 /* CircularProgress.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
