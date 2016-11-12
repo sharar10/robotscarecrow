@@ -1,3 +1,6 @@
 Thoughts:
 
-- add About tab 
+- add About tab
+- weather API
+- disable button
+- field usage time

@@ -31,7 +31,7 @@
                                     <action selector="letsGoPress" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Aj-go-PFL"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Goose.png" translatesAutoresizingMaskIntoConstraints="NO" id="JhS-rh-RQZ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="goose" translatesAutoresizingMaskIntoConstraints="NO" id="JhS-rh-RQZ">
                                 <rect key="frame" x="68" y="127" width="240" height="177"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter your credential." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asx-CC-oCN">
@@ -107,7 +107,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ITG-CN-62h">
                                 <rect key="frame" x="103" y="400" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="Help-50.png">
+                                <state key="normal" title="Button" image="help">
                                     <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
@@ -134,7 +134,7 @@
                             <constraint firstItem="vft-qS-8A1" firstAttribute="top" secondItem="O23-5q-HdK" secondAttribute="bottom" constant="230" id="mUq-Q7-ran"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Mission" image="business-target-7.png" id="Gy0-7s-KRe"/>
+                    <tabBarItem key="tabBarItem" title="Mission" image="mission" id="Gy0-7s-KRe"/>
                     <connections>
                         <outlet property="mapView" destination="O23-5q-HdK" id="Fl9-BM-qm2"/>
                         <outlet property="sensitivityLevel" destination="9Ch-1B-eV8" id="4Vd-pF-qPg"/>
@@ -143,6 +143,114 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="znu-qm-etW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1464.8" y="411.544227886057"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="8Tb-cu-BOC">
+            <objects>
+                <viewController id="Auk-ya-0jK" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uM8-IV-H51"/>
+                        <viewControllerLayoutGuide type="bottom" id="TYF-Rx-aM8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Y4M-JM-cap">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter mission name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kWg-i7-6yx">
+                                <rect key="frame" x="16" y="106" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter sensitivity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Svp-W0-Bef">
+                                <rect key="frame" x="16" y="173" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sensitivity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXA-Gz-869">
+                                <rect key="frame" x="16" y="144" width="79" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WrL-la-eBF">
+                                <rect key="frame" x="0.0" y="17" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="New Mission" id="nSG-Gd-KCY">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="7F5-44-Gfk"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Save" id="nRB-iA-XGa"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mission Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBk-mW-ZDF">
+                                <rect key="frame" x="16" y="77" width="108" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Ka-S1-5p3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-738" y="753"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="HxU-Hh-CCu">
+            <objects>
+                <tableViewController id="RjA-7y-FJI" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="geM-0Q-RC7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <navigationBar key="tableFooterView" contentMode="scaleToFill" id="OJJ-Uc-KdI">
+                            <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Missions" id="PoZ-3E-rOZ">
+                                    <barButtonItem key="rightBarButtonItem" title="New" id="dJS-Mp-NwW">
+                                        <connections>
+                                            <segue destination="Auk-ya-0jK" kind="show" id="TAA-jE-UU6"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Uhd-cl-DEA" customClass="MissionTableViewCell" customModule="GooseBye" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Uhd-cl-DEA" id="M2O-JQ-M8L">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gga-E4-c88">
+                                            <rect key="frame" x="8" y="11" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="RjA-7y-FJI" id="tAe-S3-3cQ"/>
+                            <outlet property="delegate" destination="RjA-7y-FJI" id="UBW-Ba-mR1"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Msn-eD-EhQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-12" y="767"/>
         </scene>
         <!--About-->
         <scene sceneID="HAf-Iu-9W3">
@@ -157,12 +265,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="About" image="About-30.png" id="jkK-ep-JFV"/>
+                    <tabBarItem key="tabBarItem" title="About" image="about" id="jkK-ep-JFV"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2zZ-ZM-oYR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="686" y="806"/>
+            <point key="canvasLocation" x="685.60000000000002" y="805.54722638680664"/>
         </scene>
         <!--Status-->
         <scene sceneID="84R-XG-cVy">
@@ -220,7 +328,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FwV-Yc-Xss" customClass="CircularProgress" customModule="GooseBye" customModuleProvider="target">
                                 <rect key="frame" x="123" y="122" width="129" height="129"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Empty Battery Filled-100.png" translatesAutoresizingMaskIntoConstraints="NO" id="lbL-Qo-TQs">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="battery" translatesAutoresizingMaskIntoConstraints="NO" id="lbL-Qo-TQs">
                                         <rect key="frame" x="29.5" y="29.5" width="70" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="6qo-eJ-WCz"/>
@@ -282,6 +390,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PhI-Fu-CGo">
+                                <rect key="frame" x="84" y="365" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="RjA-7y-FJI" kind="show" id="6kD-NX-swP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -299,7 +415,7 @@
                             <constraint firstItem="PqH-w8-hrk" firstAttribute="width" secondItem="hgm-S7-H7S" secondAttribute="width" id="uTm-LY-F6s"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Status" image="home-7.png" id="tnr-G9-yzp"/>
+                    <tabBarItem key="tabBarItem" title="Status" image="home" id="tnr-G9-yzp"/>
                     <connections>
                         <outlet property="batteryPercentage" destination="G62-3B-FPm" id="6k6-Ak-nD8"/>
                         <outlet property="circularBatteryView" destination="FwV-Yc-Xss" id="U37-T5-c7k"/>
@@ -330,11 +446,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="About-30.png" width="30" height="30"/>
-        <image name="Empty Battery Filled-100.png" width="100" height="100"/>
-        <image name="Goose.png" width="1242" height="2208"/>
-        <image name="Help-50.png" width="50" height="50"/>
-        <image name="business-target-7.png" width="30" height="30"/>
-        <image name="home-7.png" width="30" height="30"/>
+        <image name="about" width="15" height="15"/>
+        <image name="battery" width="50" height="50"/>
+        <image name="goose" width="621" height="1104"/>
+        <image name="help" width="25" height="25"/>
+        <image name="home" width="15" height="15"/>
+        <image name="mission" width="15" height="15"/>
     </resources>
 </document>
