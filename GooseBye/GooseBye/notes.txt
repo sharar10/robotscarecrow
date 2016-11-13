@@ -4,3 +4,9 @@ Thoughts:
 - weather API
 - disable button
 - field usage time
+- send mission to DJI button
+
+
+Bugs:
+
+- cancel button press when creating new mission
