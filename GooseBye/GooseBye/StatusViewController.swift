@@ -18,8 +18,14 @@ class StatusViewController: UIViewController {
         circularBatteryView.angle = 0.0
         circularBatteryView.animate(toAngle: 180.0, duration: 1, completion: nil)
         batteryPercentage.text = "50%"
-        batteryPercentage.center = circularBatteryView.center
+        
+        // Fetch Weather Data
+        dataManager.weatherDataForLocation(latitude: Defaults.Latitude, longitude: Defaults.Longitude) { (response, error) in
+            print(response)
+        }
     }
+    
+    private let dataManager = DataManager(baseURL: API.authenticatedBaseURL)
     
     override func viewDidAppear(_ animated: Bool) {
         print("reached Home View")

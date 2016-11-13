@@ -19,24 +19,13 @@ class MissionTableViewController: UITableViewController {
         if let savedMissions = loadMissions() {
             missions += savedMissions
         }
-        
-//        if let savedMissions = loadMissions() {
-//            missions += savedMissions
-//        }
-        
         navigationItem.leftBarButtonItem = editButtonItem
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
     func saveMissions() {
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(missions, toFile: Mission.ArchiveURL.path)
         if !isSuccessfulSave {
-            print("Failed to save meals...")
+            print("Failed to save missions...")
         }
     }
     
@@ -72,13 +61,6 @@ class MissionTableViewController: UITableViewController {
             print("Adding new mission")
         }
     }
-    
-//    func loadMissions() {
-//        let mission1 = Mission(name: "NewBalanceField", sensitivity: "5")
-//        let mission2 = Mission(name: "NickersonField", sensitivity: "10")
-//        missions.append(mission1!)
-//        missions.append(mission2!)
-//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -141,7 +123,6 @@ class MissionTableViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
- 
 
     /*
     // Override to support rearranging the table view.

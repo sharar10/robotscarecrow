@@ -22,7 +22,7 @@ class NewMissionViewController: UIViewController, UITextFieldDelegate {
         if let mission = mission {
             navigationItem.title = mission.name
             nameTextField.text = mission.name
-            sensitivityTextField.text = "\(mission.sensitivity)"
+            sensitivityTextField.text = mission.sensitivity
         }
         
         checkValidMissionName()
