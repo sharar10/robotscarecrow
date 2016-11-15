@@ -9,7 +9,7 @@
 import UIKit
 
 class StatusViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,15 +20,31 @@ class StatusViewController: UIViewController {
         batteryPercentage.text = "50%"
         
         // Fetch Weather Data
-        dataManager.weatherDataForLocation(latitude: Defaults.Latitude, longitude: Defaults.Longitude) { (response, error) in
-            print(response)
+        dataManager.weatherDataForLocation(latitude: 42.36, longitude: -71.06) { (response, error) in
+            if response != nil {
+                let currentWeatherJSON: NSDictionary = (response?.object(forKey: "currently") ?? "N/A") as! NSDictionary
+                self.currentWeatherData.temperature = currentWeatherJSON.object(forKey: "temperature") as! Double?
+                var timeSince1970 = currentWeatherJSON.object(forKey: "time") as! Double
+                timeSince1970 -= 18000 //account for timezone difference
+                self.currentWeatherData.time = Date(timeIntervalSince1970: timeSince1970) as Date?
+                self.currentWeatherData.windSpeed = currentWeatherJSON.object(forKey: "windSpeed") as! Int?
+                self.currentWeatherData.precipitationProbability = currentWeatherJSON.object(forKey: "precipProbability") as! Double?
+                self.currentTemp.text = "\(self.currentWeatherData.temperature! as Double) ℉"
+                print(response)
+            }
+            else {
+                print("no data")
+            }
         }
     }
     
-    private let dataManager = DataManager(baseURL: API.authenticatedBaseURL)
+    private let dataManager = DataManager(baseURL: weatherAPI.authenticatedBaseURL)
+    private var currentWeatherData = WeatherData()
+    
+    
+    @IBOutlet weak var currentTemp: UILabel!
     
     override func viewDidAppear(_ animated: Bool) {
-        print("reached Home View")
     }
 
     override func didReceiveMemoryWarning() {

@@ -46,6 +46,7 @@ class NewMissionViewController: UIViewController, UITextFieldDelegate {
         }
         else {
             navigationController?.popViewController(animated: true)
+            dismiss(animated: true, completion: nil)
         }
     }
     

@@ -8,24 +8,33 @@
 
 import Foundation
 
-struct WeatherData {
+public struct WeatherData {
     
-    public let lat: Double
-    public let long: Double
+    public var lat: Double?
+    public var long: Double?
     
-    public let time: Date
-    public let windSpeed: Int
-    public let temperature: Double
-    public let precipitation: Double
+    public var time: Date?
+    public var windSpeed: Int?
+    public var temperature: Double?
+    public var precipitationProbability: Double?
 
     
     
-    public init(lat: Double, long: Double, time: Date, windSpeed: Int, temperature: Double, precipitation: Double) {
-        self.lat = lat
-        self.long = long
-        self.time = time
-        self.windSpeed = windSpeed
-        self.temperature = temperature
-        self.precipitation = precipitation
+    public init() {
+        
     }
 }
+
+//extension WeatherData: JSONDecodable {
+//    public init(decoder: JSONDecoder) throws {
+//        self.lat = try decoder.decode(key: "latitude")
+//        self.long = try decoder.decode(key: "longitude")
+//        self.windSpeed = try decoder.decode(key: "windSpeed")
+//        self.temperature = try decoder.decode(key: "temperature")
+//        self.precipitation = try decoder.decode(key: "precipIntensity")
+//        
+//        let time: Double = try decoder.decode(key: "time")
+//        self.time = Date(timeIntervalSince1970: time)
+//    
+//    }
+//}

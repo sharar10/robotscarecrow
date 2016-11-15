@@ -309,22 +309,21 @@
                                             <constraint firstAttribute="width" secondItem="G3c-5a-68G" secondAttribute="height" multiplier="80:21" id="npl-U3-xpX"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DISABLE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBL-lH-pJ7">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="disable" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBL-lH-pJ7">
                                         <rect key="frame" x="117" y="567" width="141" height="43"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="73° F" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGG-m8-pHp">
-                                        <rect key="frame" x="238" y="442" width="65" height="41"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGG-m8-pHp">
+                                        <rect key="frame" x="202" y="442" width="135" height="41"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.86443131345177671" green="0.86443131345177671" blue="0.86443131345177671" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="2y1-FT-BcZ" firstAttribute="centerX" secondItem="J6w-MT-R6W" secondAttribute="centerX" id="2nJ-Fu-3DV"/>
                                     <constraint firstItem="G3c-5a-68G" firstAttribute="leading" secondItem="mjN-h3-KVe" secondAttribute="leading" constant="67" id="8mn-70-acO"/>
@@ -361,6 +360,7 @@
                     <connections>
                         <outlet property="batteryPercentage" destination="G62-3B-FPm" id="6k6-Ak-nD8"/>
                         <outlet property="circularBatteryView" destination="FwV-Yc-Xss" id="U37-T5-c7k"/>
+                        <outlet property="currentTemp" destination="TGG-m8-pHp" id="3XC-S6-67w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="88o-zL-OWO" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -9,4 +9,9 @@ Thoughts:
 
 Bugs:
 
-- cancel button press when creating new mission
+- cancel button press when creating new mission FIXED
+
+
+Features to add:
+
+- UIMap in new mission view, user can select a rectangular space, grab top left and bottom right x,y values and turn into long and lat values

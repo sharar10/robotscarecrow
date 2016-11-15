@@ -23,7 +23,6 @@ final class DataManager {
     let baseURL: URL
     init(baseURL: URL) {
         self.baseURL = baseURL
-        
     }
     
     func weatherDataForLocation(latitude: Double, longitude: Double, completion: @escaping WeatherDataCompletion) {
