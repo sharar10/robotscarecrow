@@ -30,7 +30,10 @@ class StatusViewController: UIViewController {
                 self.currentWeatherData.windSpeed = currentWeatherJSON.object(forKey: "windSpeed") as! Int?
                 self.currentWeatherData.precipitationProbability = currentWeatherJSON.object(forKey: "precipProbability") as! Double?
                 self.currentTemp.text = "\(self.currentWeatherData.temperature! as Double) ℉"
-                print(response)
+                //print(response)
+                let iconDesc: String = currentWeatherJSON.object(forKey: "icon") as! String
+                let iconImage: UIImage? = UIImage(named: iconDesc)
+                self.currentWeatherIcon.image = iconImage ?? #imageLiteral(resourceName: "default")
             }
             else {
                 print("no data")
@@ -41,6 +44,7 @@ class StatusViewController: UIViewController {
     private let dataManager = DataManager(baseURL: weatherAPI.authenticatedBaseURL)
     private var currentWeatherData = WeatherData()
     
+    @IBOutlet weak var currentWeatherIcon: UIImageView!
     
     @IBOutlet weak var currentTemp: UILabel!
     
