@@ -13,20 +13,19 @@ class CredentialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
     @IBOutlet weak var credentialValue: UITextField!
     
     @IBAction func letsGoPress() {
         if (credentialValue.text == "123456")
         {
-            print("yay")
             self.performSegue(withIdentifier: "segueCredentialToHome", sender: nil)
         }
     }

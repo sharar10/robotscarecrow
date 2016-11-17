@@ -20,7 +20,13 @@ class StatusViewController: UIViewController {
         batteryPercentage.text = "50%"
         
         // Fetch Weather Data
-        dataManager.weatherDataForLocation(latitude: 42.36, longitude: -71.06) { (response, error) in
+        loadWeather();
+    }
+    
+    func loadWeather() {
+        dataManager.weatherDataForLocation(latitude: 42.36, longitude: -71.06)
+        {
+            (response, error) in
             if response != nil {
                 let currentWeatherJSON: NSDictionary = (response?.object(forKey: "currently") ?? "N/A") as! NSDictionary
                 self.currentWeatherData.temperature = currentWeatherJSON.object(forKey: "temperature") as! Double?
@@ -29,16 +35,23 @@ class StatusViewController: UIViewController {
                 self.currentWeatherData.time = Date(timeIntervalSince1970: timeSince1970) as Date?
                 self.currentWeatherData.windSpeed = currentWeatherJSON.object(forKey: "windSpeed") as! Int?
                 self.currentWeatherData.precipitationProbability = currentWeatherJSON.object(forKey: "precipProbability") as! Double?
-                self.currentTemp.text = "\(self.currentWeatherData.temperature! as Double) ℉"
                 //print(response)
                 let iconDesc: String = currentWeatherJSON.object(forKey: "icon") as! String
                 let iconImage: UIImage? = UIImage(named: iconDesc)
-                self.currentWeatherIcon.image = iconImage ?? #imageLiteral(resourceName: "default")
+                DispatchQueue.main.async(execute: {
+                    self.currentTemp.text = "\(self.currentWeatherData.temperature!) ℉"
+                    self.currentWeatherIcon.image = iconImage ?? #imageLiteral(resourceName: "default")
+                })
+                print(" ")
+                print(self.currentWeatherData)
+                print(" ")
             }
             else {
                 print("no data")
             }
+            
         }
+        
     }
     
     private let dataManager = DataManager(baseURL: weatherAPI.authenticatedBaseURL)

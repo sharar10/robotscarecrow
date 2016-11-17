@@ -10,8 +10,23 @@ Thoughts:
 Bugs:
 
 - cancel button press when creating new mission FIXED
+- rotating map doesn't save'
+- quit app and reopen goes to Georgia
+- loading map takes forever on actual iPhone
 
 
 Features to add:
 
 - UIMap in new mission view, user can select a rectangular space, grab top left and bottom right x,y values and turn into long and lat values
+
+
+MKCoordinateRegion
+- center
+    CLLocationCoordinate2D
+        latitude - CLLocationDegrees (double)
+
+        longitude - CLLocationDegrees (double)
+- span
+    MKCoordinateSpan
+        deltaLat - CLLocationDegrees (double)
+        deltaLong - CLLocationDegrees (double)
