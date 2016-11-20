@@ -24,7 +24,6 @@ MKCoordinateRegion
 - center
     CLLocationCoordinate2D
         latitude - CLLocationDegrees (double)
-
         longitude - CLLocationDegrees (double)
 - span
     MKCoordinateSpan
