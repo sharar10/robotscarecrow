@@ -67,7 +67,7 @@ class Mission: NSObject, NSCoding {
         let sensitivity = aDecoder.decodeObject(forKey: PropertyKey.sensitivityKey) as? String
         let rect = aDecoder.decodeObject(forKey: PropertyKey.rectKey) as? CGRect
         let latitude = aDecoder.decodeObject(forKey: PropertyKey.latitudeKey) as? Double
-        let longitude = aDecoder.decodeObject(forKey: PropertyKey.latitudeKey) as? Double
+        let longitude = aDecoder.decodeObject(forKey: PropertyKey.longitudeKey) as? Double
         let deltaLatitude = aDecoder.decodeObject(forKey: PropertyKey.deltaLatitudeKey) as? Double
         let deltaLongitude = aDecoder.decodeObject(forKey: PropertyKey.deltaLongitudeKey) as? Double
 
