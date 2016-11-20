@@ -1,4 +1,4 @@
-Alt-H1 robotscarecrow
+robotscarecrow
 ======
 
 DJI Phantom 3 will recognize geese and chase them away. The drone will determine **waypoints**(destinations) in real time based on geese movement. 
