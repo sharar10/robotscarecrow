@@ -1,4 +1,4 @@
-# ardrone-autonomy
+ardrone-autonomy
 
 An autonomous flight library for the ARDrone, built on top of 
 the [node-ar-drone](https://github.com/felixge/node-ar-drone) library. 
