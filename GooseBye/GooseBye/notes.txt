@@ -10,8 +10,8 @@ Thoughts:
 Bugs:
 
 - cancel button press when creating new mission FIXED
-- rotating map doesn't save'
-- quit app and reopen goes to Georgia
+- rotating map doesn't save
+- quit app and reopen goes to Georgia FIXED
 - loading map takes forever on actual iPhone
 
 
@@ -29,3 +29,7 @@ MKCoordinateRegion
     MKCoordinateSpan
         deltaLat - CLLocationDegrees (double)
         deltaLong - CLLocationDegrees (double)
+
+
+Features to add:
+- Map Satellite view

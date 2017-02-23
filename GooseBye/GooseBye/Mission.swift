@@ -21,6 +21,12 @@ class Mission: NSObject, NSCoding {
     var deltaLatitude: Double?
     var deltaLongitude: Double?
     
+//    var topLeftLat: Double?
+//    var topLeftLong: Double?
+//    
+//    var bottomRightLat: Double?
+//    var bottomRightLong: Double?
+    
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.appendingPathComponent("missions")
     

@@ -24,6 +24,9 @@ class NewMissionViewController: UIViewController, UITextFieldDelegate, CLLocatio
     var region: MKCoordinateRegion?
     @IBOutlet weak var rect: UIView!
     
+    var inStream: InputStream?
+    var outStream: OutputStream?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -50,6 +53,26 @@ class NewMissionViewController: UIViewController, UITextFieldDelegate, CLLocatio
         getLocation()
         mapSetup()
         setConstraints()
+    }
+    
+    @IBAction func sendMissionPress() {
+        print("lets send that mission")
+        
+        let jsonObject: [String: AnyObject] = [
+            "name": self.mission?.name as AnyObject,
+            "sensitivity": self.mission?.sensitivity as AnyObject,
+            "latitude": self.mission?.latitude as AnyObject,
+            "longitude": self.mission?.longitude as AnyObject
+        ]
+        
+        let valid = JSONSerialization.isValidJSONObject(jsonObject) // true
+
+        print(valid)
+        
+        let data : Data = "hello. This is IPHONE ".data(using: String.Encoding.utf8)!
+        //outStream?.write(UnsafePointer<UInt8>(data.bytes), maxLength: data.length)
+        let bytesWritten = data.withUnsafeBytes { outStream?.write($0, maxLength: data.count) }
+        print(bytesWritten ?? "nil")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -178,13 +201,16 @@ class NewMissionViewController: UIViewController, UITextFieldDelegate, CLLocatio
             let name = nameTextField.text ?? ""
             let sensitivity = sensitivityTextField.text
             let missionRect = self.rect.frame
+            
             let missionRegion = mapView.convert(self.mapView.frame, toRegionFrom: self.view)
             let latitude = missionRegion.center.latitude
             let longitude = missionRegion.center.longitude
             let deltaLatitude = missionRegion.span.latitudeDelta
             let deltaLongitude = missionRegion.span.longitudeDelta
             
+            let mapAngle = self.mapView.camera.heading
             
+            print("angle: \(mapAngle)")
             print("name: \(name)")
             print("sensitivity: \(sensitivity)")
             print("region: \(mapView.convert(self.rect.frame, toRegionFrom: self.view))")
