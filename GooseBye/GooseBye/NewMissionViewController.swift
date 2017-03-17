@@ -65,14 +65,16 @@ class NewMissionViewController: UIViewController, UITextFieldDelegate, CLLocatio
             "longitude": self.mission?.longitude as AnyObject
         ]
         
+        let string = "\(jsonObject)"
+        print(string)
         let valid = JSONSerialization.isValidJSONObject(jsonObject) // true
 
         print(valid)
         
-        let data : Data = "hello. This is IPHONE ".data(using: String.Encoding.utf8)!
+        let data : Data = string.data(using: String.Encoding.utf8)!
         //outStream?.write(UnsafePointer<UInt8>(data.bytes), maxLength: data.length)
-        let bytesWritten = data.withUnsafeBytes { outStream?.write($0, maxLength: data.count) }
-        print(bytesWritten ?? "nil")
+        //let bytesWritten = data.withUnsafeBytes { outStream?.write($0, maxLength: data.count) }
+        print(data)
     }
     
     override func viewWillAppear(_ animated: Bool) {

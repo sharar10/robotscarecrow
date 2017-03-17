@@ -21,6 +21,18 @@ class StatusViewController: UIViewController {
         
         // Fetch Weather Data
         loadWeather();
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(disablePress(img:)))
+        disableImage.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    @IBOutlet weak var disableImage: UIImageView!
+    
+    @IBOutlet weak var disableLabel: UILabel!
+    
+    
+    func disablePress(img: AnyObject) {
+        print("disable!")
     }
     
     func loadWeather() {
