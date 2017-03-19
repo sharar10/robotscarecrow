@@ -7,6 +7,14 @@
 //
 
 import UIKit
+import DJISDK
+import CoreLocation
+
+class CurrentMission {
+    static let currentMission = CurrentMission()
+    private init() {}
+    var mission: Mission?
+}
 
 class StatusViewController: UIViewController {
     
@@ -21,6 +29,18 @@ class StatusViewController: UIViewController {
         
         // Fetch Weather Data
         loadWeather();
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(disablePress(img:)))
+        disableImage.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    @IBOutlet weak var disableImage: UIImageView!
+    
+    @IBOutlet weak var disableLabel: UILabel!
+    
+    
+    func disablePress(img: AnyObject) {
+        print("disable!")
     }
     
     func loadWeather() {
@@ -82,5 +102,62 @@ class StatusViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    var disabled: Bool?
+    
+    var currentFieldSections = [0, 0, 0, 0]
+    
+    var inFieldSections = [0, 0, 0, 0] //from rPi
+    
+    //rPi should be updating inFieldSections every 10 s
+    
+    //periodically execute in background
+    func updateCoordinates() {
+        if currentFieldSections != inFieldSections {
+            currentFieldSections = inFieldSections
+            
+            // send updated coordinates to DJI
+            
+            let fieldSectionCoordinates = calculateFieldSections(x1: CurrentMission.currentMission.mission.x1, y1: CurrentMission.currentMission.mission.y1, x2: CurrentMission.currentMission.mission.x2, y2: CurrentMission.currentMission.mission.y2)
+            
+            var waypoints = [DJIWaypoint]()
+            
+            for (var i = 0; i < 4; i++) {
+                if (currentFieldSections[i] == 1) {
+                    let waypoint = DJIWaypoint(coordinate: CLLocationCoordinate2D(latitude: fieldSectionCoordinates[i].y, longitude: fieldSectionCoordinates[i].x))
+                    waypoints.append(waypoint)
+                }
+            }
+            
+        }
+        else {
+            return
+        }
+        
+    }
+    
+    func calculateFieldSections(x1: Double, y1: Double, x2: Double, y2: Double) -> [CGPoint] {
+        let centerX = (x1 + x2)/2
+        let centerY = (y1 + y2)/2
+        
+        let quad1_x = (x1 + centerX)/2
+        let quad1_y = (y1 + centerY)/2
+        
+        let quad2_x = (centerX + x2)/2
+        let quad2_y = (y1 + centerY)/2
+        
+        let quad3_x = (x1 + centerX)/2
+        let quad3_y = (centerY + y2)/2
+        
+        let quad4_x = (centerX + x2)/2
+        let quad4_y = (centerY + y2)/2
+        
+        let section1_x = (x1 + quad1_x)/2
+        let section1_y = (y1 + quad1_y)/2
+        //...
+        
+        return [CGPoint(quad1_x, quad1_y), CGPoint(quad2_x, quad2_y), CGPoint(quad3_x, quad3_y), CGPoint(quad4_x, quad4_y)]
+    }
 
 }
+

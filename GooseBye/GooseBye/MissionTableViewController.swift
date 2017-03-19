@@ -8,14 +8,14 @@
 
 import UIKit
 
-class MissionTableViewController: UITableViewController {
+class MissionTableViewController: UITableViewController, StreamDelegate {
     
     var missions = [Mission]()
     
     override func viewDidLoad() {
         //missions.removeAll()
         super.viewDidLoad()
-        
+        networkEnable()
         if let savedMissions = loadMissions() {
             missions += savedMissions
         }
@@ -47,6 +47,31 @@ class MissionTableViewController: UITableViewController {
         }
     }
     
+    let addr = "128.197.175.233"
+    let port = 9876
+    
+    var inStream: InputStream?
+    var outStream: OutputStream?
+    
+    var buffer = [UInt8](repeating: 0, count: 200)
+    
+    func networkEnable() {
+        print("Network Enable")
+        Stream.getStreamsToHost(withName: addr, port: port, inputStream: &inStream, outputStream: &outStream)
+        
+        inStream?.delegate = self
+        outStream?.delegate = self
+        
+        inStream?.schedule(in: RunLoop.current, forMode: RunLoopMode.defaultRunLoopMode)
+        outStream?.schedule(in: RunLoop.current, forMode: RunLoopMode.defaultRunLoopMode)
+        
+        inStream?.open()
+        outStream?.open()
+        
+        buffer = [UInt8](repeating: 0, count: 200)
+    }
+
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowDetail" {
             let missionDetailViewController = segue.destination as! NewMissionViewController
@@ -55,6 +80,8 @@ class MissionTableViewController: UITableViewController {
                 let indexPath = tableView.indexPath(for: selectedMissionCell)!
                 let selectedMission = missions[indexPath.row]
                 missionDetailViewController.mission = selectedMission
+                missionDetailViewController.outStream = self.outStream
+                missionDetailViewController.inStream = self.inStream
             }
         }
         else if segue.identifier == "AddItem" {

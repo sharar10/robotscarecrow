@@ -12,6 +12,7 @@
 		A632B8821DD81BA8001F3353 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A632B8811DD81BA8001F3353 /* WeatherAPI.swift */; };
 		A632B8841DD81CCC001F3353 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A632B8831DD81CCC001F3353 /* DataManager.swift */; };
 		A632B8861DD81F6E001F3353 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A632B8851DD81F6E001F3353 /* WeatherData.swift */; };
+		A64E859A1E43BC4A00A6064F /* SendDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64E85991E43BC4A00A6064F /* SendDataViewController.swift */; };
 		A65DB2141DB88D020070B0DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65DB2131DB88D020070B0DC /* AppDelegate.swift */; };
 		A65DB2161DB88D020070B0DC /* CredentialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65DB2151DB88D020070B0DC /* CredentialViewController.swift */; };
 		A65DB2191DB88D020070B0DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A65DB2171DB88D020070B0DC /* Main.storyboard */; };
@@ -48,9 +49,11 @@
 /* Begin PBXFileReference section */
 		A622D9931DC0616F0091C23B /* StatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
 		A622D9961DC55A900091C23B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A626E4191E7DDC350066D8AD /* DJISDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DJISDK.framework; path = ../../../Downloads/iOS_Mobile_SDK/DJISDK.framework; sourceTree = "<group>"; };
 		A632B8811DD81BA8001F3353 /* WeatherAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
 		A632B8831DD81CCC001F3353 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		A632B8851DD81F6E001F3353 /* WeatherData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		A64E85991E43BC4A00A6064F /* SendDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendDataViewController.swift; sourceTree = "<group>"; };
 		A65DB2131DB88D020070B0DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A65DB2151DB88D020070B0DC /* CredentialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialViewController.swift; sourceTree = "<group>"; };
 		A65DB2181DB88D020070B0DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,8 +63,8 @@
 		A67F54CB1DCA60ED00A6F953 /* notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notes.txt; sourceTree = "<group>"; };
 		A689DC921DD6A86400E8BEED /* Mission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
 		A689DC941DD6AAA700E8BEED /* MissionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionTableViewCell.swift; sourceTree = "<group>"; };
-		A689DC961DD77D0200E8BEED /* GooseByeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GooseByeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A689DC971DD77D0200E8BEED /* GooseByeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GooseByeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A689DC961DD77D0200E8BEED /* GooseByeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = GooseByeTests.xctest; path = "/Users/kishanpatel/Documents/robotscarecrow/GooseBye/build/Debug-iphoneos/GooseByeTests.xctest"; sourceTree = "<absolute>"; };
+		A689DC971DD77D0200E8BEED /* GooseByeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = GooseByeUITests.xctest; path = "/Users/kishanpatel/Documents/robotscarecrow/GooseBye/build/Debug-iphoneos/GooseByeUITests.xctest"; sourceTree = "<absolute>"; };
 		A69949F61DBC4946001C78B0 /* CircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgress.swift; sourceTree = "<group>"; };
 		A69949F81DBD86B0001C78B0 /* SegueNext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueNext.swift; sourceTree = "<group>"; };
 		A69949FA1DBD8E29001C78B0 /* SeguePrevious.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeguePrevious.swift; sourceTree = "<group>"; };
@@ -113,8 +116,6 @@
 				A65DB2121DB88D020070B0DC /* GooseBye */,
 				A69949F31DBC47A0001C78B0 /* Frameworks */,
 				A6D8FAF81DCBF6500042DCBB /* GooseBye.app */,
-				A689DC961DD77D0200E8BEED /* GooseByeTests.xctest */,
-				A689DC971DD77D0200E8BEED /* GooseByeUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				A65DB2171DB88D020070B0DC /* Main.storyboard */,
+				A64E85991E43BC4A00A6064F /* SendDataViewController.swift */,
 				A632B8811DD81BA8001F3353 /* WeatherAPI.swift */,
 				A632B8831DD81CCC001F3353 /* DataManager.swift */,
 				A632B8851DD81F6E001F3353 /* WeatherData.swift */,
@@ -145,6 +147,7 @@
 		A69949F31DBC47A0001C78B0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A626E4191E7DDC350066D8AD /* DJISDK.framework */,
 				A622D9961DC55A900091C23B /* MapKit.framework */,
 			);
 			name = Frameworks;
@@ -300,6 +303,7 @@
 				A69949F91DBD86B0001C78B0 /* SegueNext.swift in Sources */,
 				A689DC931DD6A86400E8BEED /* Mission.swift in Sources */,
 				A69949FB1DBD8E29001C78B0 /* SeguePrevious.swift in Sources */,
+				A64E859A1E43BC4A00A6064F /* SendDataViewController.swift in Sources */,
 				A689DC951DD6AAA700E8BEED /* MissionTableViewCell.swift in Sources */,
 				A632B8821DD81BA8001F3353 /* WeatherAPI.swift in Sources */,
 				A6DB89CC1DD78A8200C041AF /* MissionTableViewController.swift in Sources */,
@@ -457,6 +461,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = E8E33P9R34;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = GooseBye/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SeniorDesignBU.GooseBye;
@@ -470,6 +478,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = E8E33P9R34;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = GooseBye/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SeniorDesignBU.GooseBye;

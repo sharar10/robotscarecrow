@@ -21,6 +21,12 @@ class Mission: NSObject, NSCoding {
     var deltaLatitude: Double?
     var deltaLongitude: Double?
     
+    var x1: Double?
+    var y1: Double?
+    
+    var x2: Double?
+    var y2: Double?
+    
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.appendingPathComponent("missions")
     
@@ -32,9 +38,13 @@ class Mission: NSObject, NSCoding {
         static let longitudeKey = "longitude"
         static let deltaLatitudeKey = "deltaLatitude"
         static let deltaLongitudeKey = "deltaLongitude"
+        static let x1Key = "x1"
+        static let y1Key = "y1"
+        static let x2Key = "x2"
+        static let y2Key = "y2"
     }
     
-    init?(name: String?, sensitivity: String?, rect: CGRect?, latitude: Double?, longitude: Double?, deltaLatitude: Double?, deltaLongitude: Double?) {
+    init?(name: String?, sensitivity: String?, rect: CGRect?, latitude: Double?, longitude: Double?, deltaLatitude: Double?, deltaLongitude: Double?, x1: Double?, y1: Double?, x2: Double?, y2: Double?) {
         self.name = name
         self.sensitivity = sensitivity
         self.rect = rect
@@ -42,6 +52,10 @@ class Mission: NSObject, NSCoding {
         self.longitude = longitude
         self.deltaLatitude = deltaLatitude
         self.deltaLongitude = deltaLongitude
+        self.x1 = x1
+        self.y1 = y1
+        self.x2 = x2
+        self.y2 = y2
         
         super.init()
         
@@ -59,7 +73,10 @@ class Mission: NSObject, NSCoding {
         aCoder.encode(longitude, forKey: PropertyKey.longitudeKey)
         aCoder.encode(deltaLatitude, forKey: PropertyKey.deltaLatitudeKey)
         aCoder.encode(deltaLongitude, forKey: PropertyKey.deltaLongitudeKey)
-
+        aCoder.encode(x1, forKey: PropertyKey.x1Key)
+        aCoder.encode(y1, forKey: PropertyKey.y1Key)
+        aCoder.encode(x2, forKey: PropertyKey.x2Key)
+        aCoder.encode(y2, forKey: PropertyKey.y2Key)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -70,8 +87,13 @@ class Mission: NSObject, NSCoding {
         let longitude = aDecoder.decodeObject(forKey: PropertyKey.longitudeKey) as? Double
         let deltaLatitude = aDecoder.decodeObject(forKey: PropertyKey.deltaLatitudeKey) as? Double
         let deltaLongitude = aDecoder.decodeObject(forKey: PropertyKey.deltaLongitudeKey) as? Double
+        let x1 = aDecoder.decodeObject(forKey: PropertyKey.x1Key) as? Double
+        let y1 = aDecoder.decodeObject(forKey: PropertyKey.y1Key) as? Double
+        let x2 = aDecoder.decodeObject(forKey: PropertyKey.x2Key) as? Double
+        let y2 = aDecoder.decodeObject(forKey: PropertyKey.y2Key) as? Double
 
-        self.init(name: name, sensitivity: sensitivity, rect: rect, latitude: latitude, longitude: longitude, deltaLatitude: deltaLatitude, deltaLongitude: deltaLongitude)
+
+        self.init(name: name, sensitivity: sensitivity, rect: rect, latitude: latitude, longitude: longitude, deltaLatitude: deltaLatitude, deltaLongitude: deltaLongitude, x1: x1, y1: y1, x2: x2, y2: y2)
     }
 }
 

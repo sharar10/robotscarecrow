@@ -1,16 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Send Data View Controller-->
+        <scene sceneID="X2q-ZE-yOA">
+            <objects>
+                <viewController id="9tq-Fu-h7u" customClass="SendDataViewController" customModule="GooseBye" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3kQ-Af-M31"/>
+                        <viewControllerLayoutGuide type="bottom" id="3Fh-lo-LaW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SSt-Gw-6Ea">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IfI-ab-MRd">
+                                <rect key="frame" x="112" y="99" width="150" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Connect to Server"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWx-f6-pnz">
+                                <rect key="frame" x="112" y="174" width="150" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Send msg"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ad-ml-6BG">
+                                <rect key="frame" x="25" y="387" width="324" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="labelconnection" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rru-Bq-O0K">
+                                <rect key="frame" x="25" y="464" width="324" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="toh-5H-iDP">
+                                <rect key="frame" x="112" y="252" width="150" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Send &quot;quit&quot;"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="buttonConnect" destination="IfI-ab-MRd" id="e2W-t1-3JZ"/>
+                        <outlet property="buttonQuit" destination="toh-5H-iDP" id="ChM-qL-DqP"/>
+                        <outlet property="buttonSendMsg" destination="xWx-f6-pnz" id="otZ-Ci-k1E"/>
+                        <outlet property="label" destination="6ad-ml-6BG" id="wlp-cx-TiN"/>
+                        <outlet property="labelConnection" destination="Rru-Bq-O0K" id="NiN-6k-CmQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fZg-po-mji" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-103.2" y="-621.13943028485767"/>
+        </scene>
         <!--Credential View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -40,7 +96,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KQ8-Hp-3aH">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KQ8-Hp-3aH">
                                 <rect key="frame" x="101.5" y="253" width="172" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="9Rb-dZ-cXU"/>
@@ -130,6 +186,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8yg-uX-7Fc">
+                                <rect key="frame" x="16" y="593" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Send Mission"/>
+                                <connections>
+                                    <action selector="sendMissionPress" destination="Auk-ya-0jK" eventType="touchUpInside" id="qKQ-Mg-fDG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -238,7 +302,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2zZ-ZM-oYR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2721" y="555"/>
+            <point key="canvasLocation" x="2188" y="56"/>
         </scene>
         <!--Status-->
         <scene sceneID="84R-XG-cVy">
@@ -261,7 +325,7 @@
                                             <constraint firstAttribute="width" secondItem="J6w-MT-R6W" secondAttribute="height" multiplier="300:79" id="13b-up-IRS"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Graph Background" translatesAutoresizingMaskIntoConstraints="NO" id="5Xr-r4-8EC">
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Graph Background" translatesAutoresizingMaskIntoConstraints="NO" id="5Xr-r4-8EC">
                                         <rect key="frame" x="62" y="141" width="250" height="232"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="5Xr-r4-8EC" secondAttribute="height" multiplier="125:116" id="qgx-fz-pfi"/>
@@ -330,7 +394,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DisableButton" translatesAutoresizingMaskIntoConstraints="NO" id="G3c-5a-68G">
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DisableButton" translatesAutoresizingMaskIntoConstraints="NO" id="G3c-5a-68G">
                                         <rect key="frame" x="67" y="557" width="240" height="63"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="G3c-5a-68G" secondAttribute="height" multiplier="80:21" id="npl-U3-xpX"/>
@@ -350,7 +414,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h8s-e3-civ">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="h8s-e3-civ">
                                         <rect key="frame" x="242" y="415" width="54" height="54"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -393,11 +457,13 @@
                         <outlet property="circularBatteryView" destination="FwV-Yc-Xss" id="U37-T5-c7k"/>
                         <outlet property="currentTemp" destination="TGG-m8-pHp" id="3XC-S6-67w"/>
                         <outlet property="currentWeatherIcon" destination="h8s-e3-civ" id="SB1-Xi-3r6"/>
+                        <outlet property="disableImage" destination="G3c-5a-68G" id="dKP-mF-HOz"/>
+                        <outlet property="disableLabel" destination="kBL-lH-pJ7" id="h0x-FR-V4n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="88o-zL-OWO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1464.8" y="-263.11844077961024"/>
+            <point key="canvasLocation" x="1431" y="-9"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="3PI-aJ-T7u">
@@ -463,6 +529,7 @@
         <image name="StatusofDroneBackground" width="488" height="118"/>
         <image name="about" width="25" height="25"/>
         <image name="batteryAndWeatherBackgrounds" width="488" height="205"/>
+        <image name="default" width="92" height="67"/>
         <image name="goose" width="621" height="1104"/>
         <image name="home" width="25" height="25"/>
         <image name="mission" width="25" height="25"/>
