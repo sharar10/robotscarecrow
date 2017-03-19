@@ -302,7 +302,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2zZ-ZM-oYR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2100" y="71"/>
+            <point key="canvasLocation" x="2188" y="56"/>
         </scene>
         <!--Status-->
         <scene sceneID="84R-XG-cVy">
@@ -325,7 +325,7 @@
                                             <constraint firstAttribute="width" secondItem="J6w-MT-R6W" secondAttribute="height" multiplier="300:79" id="13b-up-IRS"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Graph Background" translatesAutoresizingMaskIntoConstraints="NO" id="5Xr-r4-8EC">
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Graph Background" translatesAutoresizingMaskIntoConstraints="NO" id="5Xr-r4-8EC">
                                         <rect key="frame" x="62" y="141" width="250" height="232"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="5Xr-r4-8EC" secondAttribute="height" multiplier="125:116" id="qgx-fz-pfi"/>
@@ -414,7 +414,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h8s-e3-civ">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="h8s-e3-civ">
                                         <rect key="frame" x="242" y="415" width="54" height="54"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -529,6 +529,7 @@
         <image name="StatusofDroneBackground" width="488" height="118"/>
         <image name="about" width="25" height="25"/>
         <image name="batteryAndWeatherBackgrounds" width="488" height="205"/>
+        <image name="default" width="92" height="67"/>
         <image name="goose" width="621" height="1104"/>
         <image name="home" width="25" height="25"/>
         <image name="mission" width="25" height="25"/>

@@ -56,6 +56,11 @@ class NewMissionViewController: UIViewController, UITextFieldDelegate, CLLocatio
     }
     
     @IBAction func sendMissionPress() {
+        saveMission()
+        CurrentMission.currentMission.mission = self.mission!
+        print("YO")
+        print(CurrentMission.currentMission.mission!.name)
+            
         print("lets send that mission")
         
         let jsonObject: [String: AnyObject] = [
@@ -200,24 +205,41 @@ class NewMissionViewController: UIViewController, UITextFieldDelegate, CLLocatio
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if saveButton === sender as AnyObject {
-            let name = nameTextField.text ?? ""
-            let sensitivity = sensitivityTextField.text
-            let missionRect = self.rect.frame
-            
-            let missionRegion = mapView.convert(self.mapView.frame, toRegionFrom: self.view)
-            let latitude = missionRegion.center.latitude
-            let longitude = missionRegion.center.longitude
-            let deltaLatitude = missionRegion.span.latitudeDelta
-            let deltaLongitude = missionRegion.span.longitudeDelta
-            
-            let mapAngle = self.mapView.camera.heading
-            
-            print("angle: \(mapAngle)")
-            print("name: \(name)")
-            print("sensitivity: \(sensitivity)")
-            print("region: \(mapView.convert(self.rect.frame, toRegionFrom: self.view))")
-            
-            mission = Mission(name: name, sensitivity: sensitivity, rect: missionRect, latitude: latitude, longitude: longitude, deltaLatitude: deltaLatitude, deltaLongitude: deltaLongitude)
+            saveMission()
         }
+    }
+    
+    func saveMission() {
+        let name = nameTextField.text ?? ""
+        let sensitivity = sensitivityTextField.text
+        let missionRect = self.rect.frame
+        
+        let missionRegion = mapView.convert(self.mapView.frame, toRegionFrom: self.view)
+        let latitude = missionRegion.center.latitude
+        let longitude = missionRegion.center.longitude
+        let deltaLatitude = missionRegion.span.latitudeDelta
+        let deltaLongitude = missionRegion.span.longitudeDelta
+        
+        let x1 = mapView.convert(missionRect.origin, toCoordinateFrom: self.view).longitude
+        let y1 = mapView.convert(missionRect.origin, toCoordinateFrom: self.view).latitude
+        
+        let x2 = mapView.convert(CGPoint(x: missionRect.origin.x + missionRect.width, y: missionRect.origin.y + missionRect.height), toCoordinateFrom: self.view).longitude
+        let y2 = mapView.convert(CGPoint(x: missionRect.origin.x + missionRect.width, y: missionRect.origin.y + missionRect.height), toCoordinateFrom: self.view).latitude
+
+        print("x1, y1, x2, y2")
+        print(x1)
+        print(y1)
+        print(x2)
+        print(y2)
+        
+        let mapAngle = self.mapView.camera.heading
+        
+        print("angle: \(mapAngle)")
+        print("name: \(name)")
+        print("sensitivity: \(sensitivity)")
+        print("region: \(mapView.convert(self.rect.frame, toRegionFrom: self.view))")
+        
+        mission = Mission(name: name, sensitivity: sensitivity, rect: missionRect, latitude: latitude, longitude: longitude, deltaLatitude: deltaLatitude, deltaLongitude: deltaLongitude, x1: x1, y1: y1, x2: x2, y2: y2)
+
     }
 }
