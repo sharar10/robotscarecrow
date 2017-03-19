@@ -6,6 +6,7 @@
 #include "json/json-forwards.h"
 #include "json/json.h"
 
+
 using namespace std;
 
 bool safeToFly(string longitude, string latitude) {
