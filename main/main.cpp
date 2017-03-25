@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <wiringPi.h>
+#include <wiringPi.h> NO WIRING PI FOR THE TIME BEING
 #include <time.h>
 #include "mainFunc.h"
 

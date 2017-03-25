@@ -17,9 +17,9 @@ int main()
 {
 
 	string darksky = "https://api.darksky.net/forecast/d5149dd136c55362108974d2d4a41e96/";
-	string longitude = "-71.10600149999999";
 	string latitude = "42.3491402";
-	darksky += longitude + "," + latitude;
+	string longitude = "-71.10600149999999";
+	darksky += latitude + "," + longitude;
 	string todownload = "wget -O test.json -q " + darksky;
 	const char * c = todownload.c_str();
 	system(c);
