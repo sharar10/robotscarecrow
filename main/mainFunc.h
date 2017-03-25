@@ -5,10 +5,10 @@
 
 class MainFunc {
 public:
-    void timingFunc();
+    bool timingFunc();
 	int fieldStatus();
 	bool hangarDoor(bool);
-	
+	bool mission(bool);
 };
 
 #endif /* mainFunc_hpp */

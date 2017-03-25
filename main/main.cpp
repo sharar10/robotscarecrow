@@ -1,29 +1,38 @@
 #include <iostream>
 #include <string>
 #include <wiringPi.h>
+#include <time.h>
 #include "mainFunc.h"
 
 using namespace std;
 
 int main()
 {
-	//server code
-	int coordinate = 0; //sent to iOS
-	bool active = false; //from iOS
-	bool openDoor = false;	//open door = true close door = false
-	bool opened = false;	//notifies when doors are fully open
-	bool success = false;	//successful mission (not sure if we need this)
-	
-	if(active)
-	{
-		//mission starts
-		coordinate = fieldStatus();
-		opened = hangarDoor(openDoor);
-		success = mission(opened);
-	}
-	else
-	{
-		//some error message
+	bool system = true;
+	while(system){
+		//server code
+		bool active = timingFunc();
+		while(active){
+			int coordinate = 0; //sent to iOS
+			bool openDoor = false;	//open door = true close door = false
+			bool opened = false;	//notifies when doors are fully open
+			bool success = false;	//successful mission (not sure if we need this)
+			bool appReady = false;
+			
+			if(appReady)
+			{
+				//mission starts
+				coordinate = fieldStatus();
+				opened = hangarDoor(openDoor);
+				success = mission(opened);
+				
+			}
+			else
+			{
+				active = false;
+				//some error message
+			}
+		}
 	}
 	return 0;
 }
