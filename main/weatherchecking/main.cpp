@@ -29,9 +29,10 @@ int main()
 	reader.parse(i,root);
 	float precipIntensity = root["currently"]["precipIntensity"].asFloat();
 	float precipProbability = root["currently"]["precipProbability"].asFloat();
+	float windSpeed = root["currently"]["windSpeed"].asFloat();
 
 	bool isSafeToFly = true;
-	if ((precipIntensity > 0) || (precipProbability > 0)) 
+	if ((precipIntensity > 0) || (precipProbability > 0) || (windSpeed > 20)) 
 		isSafeToFly = false;
 
 	cout << precipIntensity << " " << precipProbability << endl;
