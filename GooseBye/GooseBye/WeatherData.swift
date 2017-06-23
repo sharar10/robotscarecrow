@@ -22,17 +22,3 @@ public struct WeatherData {
         
     }
 }
-
-//extension WeatherData: JSONDecodable {
-//    public init(decoder: JSONDecoder) throws {
-//        self.lat = try decoder.decode(key: "latitude")
-//        self.long = try decoder.decode(key: "longitude")
-//        self.windSpeed = try decoder.decode(key: "windSpeed")
-//        self.temperature = try decoder.decode(key: "temperature")
-//        self.precipitation = try decoder.decode(key: "precipIntensity")
-//        
-//        let time: Double = try decoder.decode(key: "time")
-//        self.time = Date(timeIntervalSince1970: time)
-//    
-//    }
-//}

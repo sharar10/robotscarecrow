@@ -9,10 +9,12 @@
 import UIKit
 import MapKit
 import CoreLocation
+import Foundation
 
-class NewMissionViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, MKMapViewDelegate {
+class NewMissionViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate, MKMapViewDelegate, StreamDelegate {
     
     // MARK: - Variables
+    
     
     var mission: Mission?
     var locationManager: CLLocationManager!
@@ -23,12 +25,21 @@ class NewMissionViewController: UIViewController, UITextFieldDelegate, CLLocatio
     @IBOutlet weak var saveButton: UIBarButtonItem!
     var region: MKCoordinateRegion?
     @IBOutlet weak var rect: UIView!
+    var mapAngle: Double?
     
     var inStream: InputStream?
     var outStream: OutputStream?
+    var buffer = [UInt8](repeating: 0, count: 200)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        networkEnable()
+        
+        self.mapView.isPitchEnabled = true;
+
+
+
         // Do any additional setup after loading the view.
         
         //mapView.addSubview(rect)
@@ -44,6 +55,8 @@ class NewMissionViewController: UIViewController, UITextFieldDelegate, CLLocatio
             let center = CLLocationCoordinate2D(latitude: mission.latitude!, longitude: mission.longitude!)
             let span = MKCoordinateSpan(latitudeDelta: mission.deltaLatitude!, longitudeDelta: mission.deltaLongitude!)
             self.region = MKCoordinateRegion(center: center, span: span)
+            self.mapAngle = mission.angle
+            print(mission.angle)
             self.rect.frame = mission.rect!
             //set map to show region
         }
@@ -53,33 +66,120 @@ class NewMissionViewController: UIViewController, UITextFieldDelegate, CLLocatio
         getLocation()
         mapSetup()
         setConstraints()
+
+    }
+    
+    let addr = "168.122.148.231"
+    let port = 9876
+    
+    func networkEnable() {
+        print("Network Enable")
+        Stream.getStreamsToHost(withName: addr, port: port, inputStream: &inStream, outputStream: &outStream)
+        
+        inStream?.delegate = self
+        outStream?.delegate = self
+        
+        inStream?.schedule(in: RunLoop.current, forMode: RunLoopMode.defaultRunLoopMode)
+        outStream?.schedule(in: RunLoop.current, forMode: RunLoopMode.defaultRunLoopMode)
+        
+        inStream?.open()
+        outStream?.open()
+        
+        buffer = [UInt8](repeating: 0, count: 200)
+    }
+
+    // BACKGROUND TASKS
+    
+    var backgroundTask: UIBackgroundTaskIdentifier = UIBackgroundTaskInvalid
+    
+    func registerBackgroundTask() {
+        backgroundTask = UIApplication.shared.beginBackgroundTask { [weak self] in
+            self?.endBackgroundTask()
+        }
+        assert(backgroundTask != UIBackgroundTaskInvalid)
+    }
+    
+    func endBackgroundTask() {
+        print("Background task ended.")
+        UIApplication.shared.endBackgroundTask(backgroundTask)
+        backgroundTask = UIBackgroundTaskInvalid
+    }
+    
+    
+    
+    func getFieldRegions() {
+        registerBackgroundTask()
+        
+        switch UIApplication.shared.applicationState {
+        case .active:
+            print("active")
+            
+            let data : Data = "0110".data(using: String.Encoding.utf8)!
+            //outStream?.write(UnsafePointer<UInt8>(data.bytes), maxLength: data.length)
+            let bytesWritten = data.withUnsafeBytes { outStream?.write($0, maxLength: data.count) }
+            print(bytesWritten)
+            
+            
+            let bufferSize = 4
+            var buffer = Array<UInt8>(repeating: 0, count: bufferSize)
+            
+            let bytesRead = inStream?.read(&buffer, maxLength: bufferSize)
+            if bytesRead! >= 0 {
+                var output = NSString(bytes: &buffer, length: bytesRead!, encoding: String.Encoding.utf8.rawValue)
+                print(output)
+            } else {
+                break
+            }
+
+        case .background:
+            print("Background time remaining = \(UIApplication.shared.backgroundTimeRemaining) seconds")
+            let data : Data = "0411".data(using: String.Encoding.utf8)!
+            //outStream?.write(UnsafePointer<UInt8>(data.bytes), maxLength: data.length)
+            let bytesWritten = data.withUnsafeBytes { outStream?.write($0, maxLength: data.count) }
+            print(bytesWritten)
+            
+            
+            let bufferSize = 4
+            var buffer = Array<UInt8>(repeating: 0, count: bufferSize)
+            
+            let bytesRead = inStream?.read(&buffer, maxLength: bufferSize)
+            if bytesRead! >= 0 {
+                var output = NSString(bytes: &buffer, length: bytesRead!, encoding: String.Encoding.utf8.rawValue)
+                print(output)
+            } else {
+                break
+            }
+
+        case .inactive:
+            break
+        }
     }
     
     @IBAction func sendMissionPress() {
+
         saveMission()
         CurrentMission.currentMission.mission = self.mission!
-        print("YO")
-        print(CurrentMission.currentMission.mission!.name)
-            
+        
         print("lets send that mission")
-        
-        let jsonObject: [String: AnyObject] = [
-            "name": self.mission?.name as AnyObject,
-            "sensitivity": self.mission?.sensitivity as AnyObject,
-            "latitude": self.mission?.latitude as AnyObject,
-            "longitude": self.mission?.longitude as AnyObject
-        ]
-        
-        let string = "\(jsonObject)"
-        print(string)
-        let valid = JSONSerialization.isValidJSONObject(jsonObject) // true
-
-        print(valid)
-        
-        let data : Data = string.data(using: String.Encoding.utf8)!
-        //outStream?.write(UnsafePointer<UInt8>(data.bytes), maxLength: data.length)
-        //let bytesWritten = data.withUnsafeBytes { outStream?.write($0, maxLength: data.count) }
-        print(data)
+        print(CurrentMission.currentMission.mission!.name!)
+    }
+    
+    
+    
+    func stream(aStream: Stream, handleEvent eventCode: Stream.Event) {
+        switch eventCode {
+        case Stream.Event.hasBytesAvailable:
+            print("has bytes available")
+            if aStream == inStream {
+                inStream!.read(&buffer, maxLength: buffer.count)
+                let bufferStr = NSString(bytes: &buffer, length: buffer.count, encoding: String.Encoding.utf8.rawValue)
+                print(bufferStr!)
+            }
+        case Stream.Event.openCompleted:
+            print("OpenCompleted")
+        default:
+            break
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -162,9 +262,10 @@ class NewMissionViewController: UIViewController, UITextFieldDelegate, CLLocatio
             mapView.setCenter(coor, animated: true)
         }
         mapView.delegate = self
-        mapView.mapType = .standard
+        mapView.mapType = MKMapType.hybrid
         mapView.isZoomEnabled = true
         mapView.isScrollEnabled = true
+        mapView.camera.heading = self.mapAngle ?? 0
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -232,14 +333,14 @@ class NewMissionViewController: UIViewController, UITextFieldDelegate, CLLocatio
         print(x2)
         print(y2)
         
-        let mapAngle = self.mapView.camera.heading
+        let currentAngle = self.mapView.camera.heading
         
         print("angle: \(mapAngle)")
         print("name: \(name)")
         print("sensitivity: \(sensitivity)")
         print("region: \(mapView.convert(self.rect.frame, toRegionFrom: self.view))")
         
-        mission = Mission(name: name, sensitivity: sensitivity, rect: missionRect, latitude: latitude, longitude: longitude, deltaLatitude: deltaLatitude, deltaLongitude: deltaLongitude, x1: x1, y1: y1, x2: x2, y2: y2)
+        mission = Mission(name: name, sensitivity: sensitivity, rect: missionRect, latitude: latitude, longitude: longitude, deltaLatitude: deltaLatitude, deltaLongitude: deltaLongitude, x1: x1, y1: y1, x2: x2, y2: y2, angle: currentAngle)
 
     }
 }

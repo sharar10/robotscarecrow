@@ -27,6 +27,8 @@ class Mission: NSObject, NSCoding {
     var x2: Double?
     var y2: Double?
     
+    var angle: Double?
+    
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.appendingPathComponent("missions")
     
@@ -42,9 +44,10 @@ class Mission: NSObject, NSCoding {
         static let y1Key = "y1"
         static let x2Key = "x2"
         static let y2Key = "y2"
+        static let angleKey = "angle"
     }
     
-    init?(name: String?, sensitivity: String?, rect: CGRect?, latitude: Double?, longitude: Double?, deltaLatitude: Double?, deltaLongitude: Double?, x1: Double?, y1: Double?, x2: Double?, y2: Double?) {
+    init?(name: String?, sensitivity: String?, rect: CGRect?, latitude: Double?, longitude: Double?, deltaLatitude: Double?, deltaLongitude: Double?, x1: Double?, y1: Double?, x2: Double?, y2: Double?, angle: Double?) {
         self.name = name
         self.sensitivity = sensitivity
         self.rect = rect
@@ -56,7 +59,7 @@ class Mission: NSObject, NSCoding {
         self.y1 = y1
         self.x2 = x2
         self.y2 = y2
-        
+        self.angle = angle
         super.init()
         
 //        if (name.isEmpty) || (sensitivity.isEmpty) {
@@ -77,6 +80,7 @@ class Mission: NSObject, NSCoding {
         aCoder.encode(y1, forKey: PropertyKey.y1Key)
         aCoder.encode(x2, forKey: PropertyKey.x2Key)
         aCoder.encode(y2, forKey: PropertyKey.y2Key)
+        aCoder.encode(angle, forKey: PropertyKey.angleKey)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -91,9 +95,10 @@ class Mission: NSObject, NSCoding {
         let y1 = aDecoder.decodeObject(forKey: PropertyKey.y1Key) as? Double
         let x2 = aDecoder.decodeObject(forKey: PropertyKey.x2Key) as? Double
         let y2 = aDecoder.decodeObject(forKey: PropertyKey.y2Key) as? Double
+        let angle = aDecoder.decodeObject(forKey: PropertyKey.angleKey) as? Double
 
 
-        self.init(name: name, sensitivity: sensitivity, rect: rect, latitude: latitude, longitude: longitude, deltaLatitude: deltaLatitude, deltaLongitude: deltaLongitude, x1: x1, y1: y1, x2: x2, y2: y2)
+        self.init(name: name, sensitivity: sensitivity, rect: rect, latitude: latitude, longitude: longitude, deltaLatitude: deltaLatitude, deltaLongitude: deltaLongitude, x1: x1, y1: y1, x2: x2, y2: y2, angle: angle)
     }
 }
 

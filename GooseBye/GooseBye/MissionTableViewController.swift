@@ -8,14 +8,14 @@
 
 import UIKit
 
-class MissionTableViewController: UITableViewController, StreamDelegate {
+class MissionTableViewController: UITableViewController {
     
     var missions = [Mission]()
     
     override func viewDidLoad() {
         //missions.removeAll()
         super.viewDidLoad()
-        networkEnable()
+        
         if let savedMissions = loadMissions() {
             missions += savedMissions
         }
@@ -47,30 +47,14 @@ class MissionTableViewController: UITableViewController, StreamDelegate {
         }
     }
     
-    let addr = "128.197.175.233"
+    //let addr = "168.122.148.231"
+    //i think commenting these out won't matter
+    let addr = "128.197.180.210"
     let port = 9876
-    
     var inStream: InputStream?
     var outStream: OutputStream?
     
     var buffer = [UInt8](repeating: 0, count: 200)
-    
-    func networkEnable() {
-        print("Network Enable")
-        Stream.getStreamsToHost(withName: addr, port: port, inputStream: &inStream, outputStream: &outStream)
-        
-        inStream?.delegate = self
-        outStream?.delegate = self
-        
-        inStream?.schedule(in: RunLoop.current, forMode: RunLoopMode.defaultRunLoopMode)
-        outStream?.schedule(in: RunLoop.current, forMode: RunLoopMode.defaultRunLoopMode)
-        
-        inStream?.open()
-        outStream?.open()
-        
-        buffer = [UInt8](repeating: 0, count: 200)
-    }
-
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowDetail" {
@@ -80,8 +64,6 @@ class MissionTableViewController: UITableViewController, StreamDelegate {
                 let indexPath = tableView.indexPath(for: selectedMissionCell)!
                 let selectedMission = missions[indexPath.row]
                 missionDetailViewController.mission = selectedMission
-                missionDetailViewController.outStream = self.outStream
-                missionDetailViewController.inStream = self.inStream
             }
         }
         else if segue.identifier == "AddItem" {

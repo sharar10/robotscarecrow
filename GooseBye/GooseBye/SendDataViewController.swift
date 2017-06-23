@@ -21,7 +21,7 @@ class SendDataViewController: UIViewController, StreamDelegate {
     @IBOutlet weak var labelConnection: UILabel!
     
     
-    let addr = "128.197.180.184"
+    let addr = "128.197.180.188"
     let port = 9876
     
     var inStream: InputStream?
@@ -45,6 +45,7 @@ class SendDataViewController: UIViewController, StreamDelegate {
     
     func btnConnectPressed(sender: UIButton) {
         NetworkEnable()
+        print("network enabled")
         buttonConnect.isEnabled = false
         
     }
@@ -77,6 +78,8 @@ class SendDataViewController: UIViewController, StreamDelegate {
         outStream?.open()
         
         buffer = [UInt8](repeating: 0, count: 200)
+        
+        print("conn established")
     }
     
     func stream(aStream: Stream, handleEvent eventCode: Stream.Event) {

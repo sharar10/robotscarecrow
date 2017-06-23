@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A622D9941DC0616F0091C23B /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A622D9931DC0616F0091C23B /* StatusViewController.swift */; };
 		A622D9971DC55A900091C23B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A622D9961DC55A900091C23B /* MapKit.framework */; };
+		A626E41D1E7F0C880066D8AD /* DJISDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A626E4191E7DDC350066D8AD /* DJISDK.framework */; };
+		A626E41E1E7F0C880066D8AD /* DJISDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A626E4191E7DDC350066D8AD /* DJISDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A632B8821DD81BA8001F3353 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A632B8811DD81BA8001F3353 /* WeatherAPI.swift */; };
 		A632B8841DD81CCC001F3353 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A632B8831DD81CCC001F3353 /* DataManager.swift */; };
 		A632B8861DD81F6E001F3353 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A632B8851DD81F6E001F3353 /* WeatherData.swift */; };
@@ -18,13 +20,13 @@
 		A65DB2191DB88D020070B0DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A65DB2171DB88D020070B0DC /* Main.storyboard */; };
 		A65DB21B1DB88D020070B0DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A65DB21A1DB88D020070B0DC /* Assets.xcassets */; };
 		A65DB21E1DB88D020070B0DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A65DB21C1DB88D020070B0DC /* LaunchScreen.storyboard */; };
-		A67F54CC1DCA60ED00A6F953 /* notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = A67F54CB1DCA60ED00A6F953 /* notes.txt */; };
 		A689DC931DD6A86400E8BEED /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = A689DC921DD6A86400E8BEED /* Mission.swift */; };
 		A689DC951DD6AAA700E8BEED /* MissionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A689DC941DD6AAA700E8BEED /* MissionTableViewCell.swift */; };
 		A69949F71DBC4946001C78B0 /* CircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69949F61DBC4946001C78B0 /* CircularProgress.swift */; };
 		A69949F91DBD86B0001C78B0 /* SegueNext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69949F81DBD86B0001C78B0 /* SegueNext.swift */; };
 		A69949FB1DBD8E29001C78B0 /* SeguePrevious.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69949FA1DBD8E29001C78B0 /* SeguePrevious.swift */; };
 		A69949FF1DBEAE59001C78B0 /* MissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69949FE1DBEAE59001C78B0 /* MissionViewController.swift */; };
+		A6BE05611E81AA5800195486 /* DJIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BE05601E81AA5800195486 /* DJIViewController.swift */; };
 		A6DB89CC1DD78A8200C041AF /* MissionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DB89CB1DD78A8200C041AF /* MissionTableViewController.swift */; };
 		A6DB89CE1DD794F600C041AF /* NewMissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DB89CD1DD794F600C041AF /* NewMissionViewController.swift */; };
 /* End PBXBuildFile section */
@@ -46,6 +48,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A626E41F1E7F0C880066D8AD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A626E41E1E7F0C880066D8AD /* DJISDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		A622D9931DC0616F0091C23B /* StatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
 		A622D9961DC55A900091C23B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -60,15 +76,15 @@
 		A65DB21A1DB88D020070B0DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A65DB21D1DB88D020070B0DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A65DB21F1DB88D020070B0DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A67F54CB1DCA60ED00A6F953 /* notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notes.txt; sourceTree = "<group>"; };
 		A689DC921DD6A86400E8BEED /* Mission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
 		A689DC941DD6AAA700E8BEED /* MissionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionTableViewCell.swift; sourceTree = "<group>"; };
-		A689DC961DD77D0200E8BEED /* GooseByeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = GooseByeTests.xctest; path = "/Users/kishanpatel/Documents/robotscarecrow/GooseBye/build/Debug-iphoneos/GooseByeTests.xctest"; sourceTree = "<absolute>"; };
-		A689DC971DD77D0200E8BEED /* GooseByeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = GooseByeUITests.xctest; path = "/Users/kishanpatel/Documents/robotscarecrow/GooseBye/build/Debug-iphoneos/GooseByeUITests.xctest"; sourceTree = "<absolute>"; };
 		A69949F61DBC4946001C78B0 /* CircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgress.swift; sourceTree = "<group>"; };
 		A69949F81DBD86B0001C78B0 /* SegueNext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueNext.swift; sourceTree = "<group>"; };
 		A69949FA1DBD8E29001C78B0 /* SeguePrevious.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeguePrevious.swift; sourceTree = "<group>"; };
 		A69949FE1DBEAE59001C78B0 /* MissionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionViewController.swift; sourceTree = "<group>"; };
+		A6BE055E1E81A9C500195486 /* GooseByeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GooseByeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6BE055F1E81A9C500195486 /* GooseByeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GooseByeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6BE05601E81AA5800195486 /* DJIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DJIViewController.swift; sourceTree = "<group>"; };
 		A6D8FAF81DCBF6500042DCBB /* GooseBye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GooseBye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6DB89CB1DD78A8200C041AF /* MissionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionTableViewController.swift; sourceTree = "<group>"; };
 		A6DB89CD1DD794F600C041AF /* NewMissionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMissionViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +96,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A622D9971DC55A900091C23B /* MapKit.framework in Frameworks */,
+				A626E41D1E7F0C880066D8AD /* DJISDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +133,8 @@
 				A65DB2121DB88D020070B0DC /* GooseBye */,
 				A69949F31DBC47A0001C78B0 /* Frameworks */,
 				A6D8FAF81DCBF6500042DCBB /* GooseBye.app */,
+				A6BE055E1E81A9C500195486 /* GooseByeTests.xctest */,
+				A6BE055F1E81A9C500195486 /* GooseByeUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,19 +142,19 @@
 			isa = PBXGroup;
 			children = (
 				A65DB2171DB88D020070B0DC /* Main.storyboard */,
+				A6BE05601E81AA5800195486 /* DJIViewController.swift */,
 				A64E85991E43BC4A00A6064F /* SendDataViewController.swift */,
 				A632B8811DD81BA8001F3353 /* WeatherAPI.swift */,
 				A632B8831DD81CCC001F3353 /* DataManager.swift */,
 				A632B8851DD81F6E001F3353 /* WeatherData.swift */,
 				A622D9931DC0616F0091C23B /* StatusViewController.swift */,
+				A6DB89CD1DD794F600C041AF /* NewMissionViewController.swift */,
 				A65DB2131DB88D020070B0DC /* AppDelegate.swift */,
 				A689DC921DD6A86400E8BEED /* Mission.swift */,
 				A6DB89CB1DD78A8200C041AF /* MissionTableViewController.swift */,
 				A689DC941DD6AAA700E8BEED /* MissionTableViewCell.swift */,
-				A6DB89CD1DD794F600C041AF /* NewMissionViewController.swift */,
 				A65DB2151DB88D020070B0DC /* CredentialViewController.swift */,
 				A69949FE1DBEAE59001C78B0 /* MissionViewController.swift */,
-				A67F54CB1DCA60ED00A6F953 /* notes.txt */,
 				A622D9951DC0645A0091C23B /* Design */,
 				A65DB21A1DB88D020070B0DC /* Assets.xcassets */,
 				A65DB21C1DB88D020070B0DC /* LaunchScreen.storyboard */,
@@ -163,6 +182,7 @@
 				A65DB20C1DB88D020070B0DC /* Sources */,
 				A65DB20D1DB88D020070B0DC /* Frameworks */,
 				A65DB20E1DB88D020070B0DC /* Resources */,
+				A626E41F1E7F0C880066D8AD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -188,7 +208,7 @@
 			);
 			name = GooseByeTests;
 			productName = GooseByeTests;
-			productReference = A689DC961DD77D0200E8BEED /* GooseByeTests.xctest */;
+			productReference = A6BE055E1E81A9C500195486 /* GooseByeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		A65DB22E1DB88D020070B0DC /* GooseByeUITests */ = {
@@ -206,7 +226,7 @@
 			);
 			name = GooseByeUITests;
 			productName = GooseByeUITests;
-			productReference = A689DC971DD77D0200E8BEED /* GooseByeUITests.xctest */;
+			productReference = A6BE055F1E81A9C500195486 /* GooseByeUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -224,6 +244,9 @@
 						DevelopmentTeam = E8E33P9R34;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Maps.iOS = {
 								enabled = 0;
 							};
@@ -267,7 +290,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A65DB21E1DB88D020070B0DC /* LaunchScreen.storyboard in Resources */,
-				A67F54CC1DCA60ED00A6F953 /* notes.txt in Resources */,
 				A65DB21B1DB88D020070B0DC /* Assets.xcassets in Resources */,
 				A65DB2191DB88D020070B0DC /* Main.storyboard in Resources */,
 			);
@@ -302,6 +324,7 @@
 				A69949FF1DBEAE59001C78B0 /* MissionViewController.swift in Sources */,
 				A69949F91DBD86B0001C78B0 /* SegueNext.swift in Sources */,
 				A689DC931DD6A86400E8BEED /* Mission.swift in Sources */,
+				A6BE05611E81AA5800195486 /* DJIViewController.swift in Sources */,
 				A69949FB1DBD8E29001C78B0 /* SeguePrevious.swift in Sources */,
 				A64E859A1E43BC4A00A6064F /* SendDataViewController.swift in Sources */,
 				A689DC951DD6AAA700E8BEED /* MissionTableViewCell.swift in Sources */,
@@ -459,6 +482,7 @@
 		A65DB2391DB88D020070B0DC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = E8E33P9R34;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -467,7 +491,7 @@
 				);
 				INFOPLIST_FILE = GooseBye/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = SeniorDesignBU.GooseBye;
+				PRODUCT_BUNDLE_IDENTIFIER = SeniorDesignBU;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -476,6 +500,7 @@
 		A65DB23A1DB88D020070B0DC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = E8E33P9R34;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -484,7 +509,7 @@
 				);
 				INFOPLIST_FILE = GooseBye/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = SeniorDesignBU.GooseBye;
+				PRODUCT_BUNDLE_IDENTIFIER = SeniorDesignBU;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
